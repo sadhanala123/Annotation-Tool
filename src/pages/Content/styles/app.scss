@@ -1,0 +1,104 @@
+@use "../toolbar/styles/_Page.scss";
+@use "../popup/styles/_Popup.scss";
+@use "../canvas/styles/_Canvas.scss";
+@use "../camera/styles/_Camera.scss";
+@use "../countdown/styles/_Countdown.scss";
+@use "../modal/styles/_Modal.scss";
+@use "../region/styles/_Region.scss";
+@use "../camera-only/styles/CameraOnly.scss";
+@use "../warning/styles/Warning.scss";
+
+html {
+  font-size: 16px;
+}
+
+.screenity-scrollbar::-webkit-scrollbar {
+  background-color: rgba(159, 206, 63, 0);
+  width: 16px;
+  height: 16px;
+  z-index: 999999;
+}
+.screenity-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(239, 26, 26, 0);
+}
+.screenity-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(224, 72, 72, 0);
+  border-radius: 16px;
+  border: 0px solid #5f4848;
+}
+.screenity-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+.screenity-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #a0a0a5;
+  border: 4px solid #c82c2c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+  border: 4px solid #e11e1e;
+}
+
+
+.ScreenityDropdownMenuContent {
+  min-width: 200px;
+  background-color: rgb(236, 15, 15);
+  margin-top: 4px;
+  margin-right: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 15px;
+  z-index: 99999;
+  font-family: 'Satoshi-Medium', sans-serif;
+  color: #29292F;
+  box-shadow: 0px 10px 38px -10px rgba(18, 112, 205, 0.35),
+    0px 10px 20px -15px rgba(4, 127, 251, 0.2);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.ScreenityDropdownMenuContent[data-side="top"] {
+  animation-name: slideDownAndFade;
+}
+.ScreenityDropdownMenuContent[data-side="right"] {
+  animation-name: slideLeftAndFade;
+}
+.ScreenityDropdownMenuContent[data-side="bottom"] {
+  animation-name: slideUpAndFade;
+}
+.ScreenityDropdownMenuContent[data-side="left"] {
+  animation-name: slideRightAndFade;
+}
+.ScreenityItemIndicator {
+  position: absolute;
+  right: 12px; 
+  width: 18px;
+  height: 18px;
+  background: #62f830;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ScreenityDropdownMenuItem,
+.ScreenityDropdownMenuRadioItem {
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 5px;
+  position: relative;
+  padding-left: 22px;
+  padding-right: 22px;
+  user-select: none;
+  outline: none;
+}
+.ScreenityDropdownMenuItem:hover {
+    background-color: #a9ca16 !important;
+    cursor: pointer;
+}
+.ScreenityDropdownMenuItem[data-disabled] {
+  color: #6E7684 !important;
+  cursor: not-allowed;
+  background-color: #051862 !important;
+}
